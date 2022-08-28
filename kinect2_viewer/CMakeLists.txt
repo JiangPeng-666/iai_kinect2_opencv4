@@ -19,6 +19,11 @@ ELSE()
   MESSAGE(ERROR "The compiler ${CMAKE_CXX_COMPILER} has no C++11 support. Please use a different C++ compiler.")
 ENDIF()
 
+# add c++14 for pcl1.10
+ADD_COMPILE_OPTIONS(-std=c++11 )
+ADD_COMPILE_OPTIONS(-std=c++14 )
+set( CMAKE_CXX_FLAGS "-std=c++11 -O3" )
+
 find_package(catkin REQUIRED COMPONENTS roscpp rostime std_msgs sensor_msgs message_filters cv_bridge image_transport compressed_image_transport compressed_depth_image_transport kinect2_bridge)
 
 ## System dependencies are found with CMake's conventions

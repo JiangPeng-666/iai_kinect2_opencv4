@@ -52,14 +52,6 @@ the [issue page of iai_kinect2](https://github.com/code-iai/iai_kinect2/issues) 
 
 Point clouds are only published when the launch file is used. Make sure to start kinect2_bridge with `roslaunch kinect2_bridge kinect2_bridge.launch`.
 
-#### Will it work with OpenCV 3.0
-
-Short answer: No.
-
-Long answer: Yes, it is possible to compile this package with OpenCV 3.0, but it will not work.
-This is because cv_bridge is used, which itself is compiled with OpenCV 2.4.x in ROS Indigo/Jade and
-linking against both OpenCV versions is not possible. Working support for OpenCV 3.0 might come with a future ROS release.
-
 #### kinect2_bridge is not working / crashing, what is wrong?
 
 There are many reasons why `kinect2_bridge` might not working. The first thing to find out whether the problem is related to `kinect2_bridge` or `libfreenect2`.
@@ -127,9 +119,9 @@ If you found no solution in the issues, feel free to open a new issue for your p
 
 ## Dependencies
 
-- ROS Indigo/Jade/Melodic/Noetic
+- ROS Noetic
 - OpenCV (4.x.x, using the one from the official Ubuntu repositories is recommended)
-- PCL (1.7.x, using the one from the official Ubuntu repositories is recommended)
+- PCL (1.10.x, using the one from the official Ubuntu repositories is recommended)
 - Eigen (optional, but recommended)
 - OpenCL (optional, but recommended)
 - [libfreenect2](https://github.com/OpenKinect/libfreenect2) (>= v0.2.0, for stability checkout the latest stable release)
@@ -138,9 +130,6 @@ If you found no solution in the issues, feel free to open a new issue for your p
 ## Install
 
 1. Install the ROS. 
-   - [Instructions for Ubuntu 14.04](http://wiki.ros.org/indigo/Installation/Ubuntu)
-   - [Instructions for Ubuntu 16.04](http://wiki.ros.org/lunar/Installation/Ubuntu)
-   - [Instructions for Ubuntu 18.04](http://wiki.ros.org/melodic/Installation/Ubuntu)
    - [Instructions for Ubuntu 20.04](http://wiki.ros.org/noetic/Installation/Ubuntu)
 2. [Setup your ROS environment](http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment)
 3. Install [libfreenect2](https://github.com/OpenKinect/libfreenect2):
@@ -153,7 +142,7 @@ If you found no solution in the issues, feel free to open a new issue for your p
 
     ```bash
     cd ~/catkin_ws/src/
-    git clone https://github.com/code-iai/iai_kinect2.git
+    git clone https://github.com/JiangPeng-666/iai_kinect2_opencv4.git
     cd iai_kinect2
     rosdep install -r --from-paths .
     cd ~/catkin_ws
