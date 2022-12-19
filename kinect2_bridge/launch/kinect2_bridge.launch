@@ -110,4 +110,7 @@
     <remap from="depth_registered/points"     to="$(arg base_name)/hd/points"/>
     <param name="queue_size" type="int" value="$(arg queue_size)"/>
   </node>
+  <!-- The z axis of kinect2 is vertical to the camera, and faces to the front -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_kinect" args="0.0 0.0 0.8 
+          -1.57  0.0 -1.57 camera_link kinect2_rgb_optical_frame 100"/>
 </launch>
